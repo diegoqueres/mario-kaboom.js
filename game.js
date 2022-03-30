@@ -44,7 +44,7 @@ scene("game", () => {
     const levelCfg = {
         width: 20,
         height: 20,
-        '=': [sprite('block', solid())],
+        '=': [sprite('block'), solid()],
         '$': [sprite('coin')],
         '%': [sprite('surprise'), solid(), 'coin-surprise'],
         '*': [sprite('surprise'), solid(), 'mushroom-surprise'],
@@ -59,6 +59,13 @@ scene("game", () => {
     }
 
     const gameLevel = addLevel(map, levelCfg)
+
+    const player = add([
+        sprite('mario'), solid(),
+        pos(30, 0),
+        body(), 
+        origin('bot')
+    ])
 })
 
 start("game")
